@@ -83,7 +83,7 @@ export default class EditExercise extends Component {
         }
 
         console.log(exercise);
-        Axios.post('http://localhost:5000/exercise/add',exercise).then(res=>console.log(res.data))
+        Axios.post('http://localhost:5000/exercise/update/'+this.props.match.params.id,exercise).then(res=>console.log(res.data))
 
         // window.location='/';
     }
@@ -92,7 +92,7 @@ export default class EditExercise extends Component {
     render(){
         return(
                <div>
-                   <h3>Create New Exercise Log</h3>
+                   <h3>Update Exercise Log</h3>
                    <form onSubmit={this.onSubmit}>
                        <div className='form-group'>
                        <label>Username :</label>
@@ -126,7 +126,7 @@ export default class EditExercise extends Component {
                        </div>
                        <div className='form-group'>
                     
-                           <input type='submit' value='Create exercise' className='btn btn-primary'/>
+                           <input type='submit' value='Update exercise' className='btn btn-primary'/>
                        </div>
                    </form>
                </div>
